@@ -718,6 +718,16 @@ def setup_questions_pool():
     for category, questions in questions_db.items():
         for question in questions:
             question['category'] = category
+            
+            # Shuffle answer options so correct answer is not always in the same position
+            correct_answer = question['options'][question['correct']]
+            shuffled_options = question['options'].copy()
+            random.shuffle(shuffled_options)
+            
+            # Update question with shuffled options and new correct index
+            question['options'] = shuffled_options
+            question['correct_answer'] = correct_answer  # Store the actual correct answer text
+            
             all_questions.append(question)
     
     # Shuffle and select 20 questions
@@ -959,7 +969,7 @@ def show_game_interface():
         """, unsafe_allow_html=True)
 
 def handle_answer_submission(selected_answer, current_q):
-    correct_answer = current_q['options'][current_q['correct']]
+    correct_answer = current_q['correct_answer']  # Use the stored correct answer text
     is_correct = selected_answer == correct_answer
     
     if is_correct:

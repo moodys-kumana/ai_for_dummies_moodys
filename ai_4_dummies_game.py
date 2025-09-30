@@ -714,9 +714,11 @@ def setup_questions_pool():
     questions_db = get_questions_database()
     all_questions = []
     
-    # Collect questions from all categories
-    for category_questions in questions_db.values():
-        all_questions.extend(category_questions)
+    # Collect questions from all categories and add category field
+    for category, questions in questions_db.items():
+        for question in questions:
+            question['category'] = category
+            all_questions.append(question)
     
     # Shuffle and select 20 questions
     random.shuffle(all_questions)

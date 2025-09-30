@@ -1,0 +1,11 @@
+[build]
+  command = "echo 'No build required for Streamlit'"
+  publish = "."
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/streamlit/:splat"
+  status = 200
+
+[functions]
+  directory = ".netlify/functions"

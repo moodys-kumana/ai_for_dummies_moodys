@@ -492,6 +492,8 @@ def init_session_state():
         st.session_state.wrong_answers = 0
     if 'hints_used' not in st.session_state:
         st.session_state.hints_used = 0
+    if 'view_mode' not in st.session_state:
+        st.session_state.view_mode = 'welcome'  # Options: 'welcome', 'learning_ai', 'learning_prog', 'game'
 
 # Achievement System
 def check_achievements():
@@ -709,17 +711,72 @@ def get_reward_points(difficulty, streak_bonus=False):
 
 def setup_questions_pool():
     """Set up a randomized pool of questions from all categories"""
+    questions_db = get_questions_database()
     all_questions = []
-    db = get_questions_database()
     
-    for category, questions in db.items():
-        for q in questions:
-            q['category'] = category
-            all_questions.append(q)
+    # Collect questions from all categories
+    for category_questions in questions_db.values():
+        all_questions.extend(category_questions)
     
-    # Shuffle and take 20 questions
+    # Shuffle and select 20 questions
     random.shuffle(all_questions)
     st.session_state.questions_pool = all_questions[:20]
+
+def show_learning_module_ai():
+    """Display the AI & Coding presentation module"""
+    st.markdown("""
+    <div style="background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <h2 style="color: #1e3a8a;">📖 AI & Coding for Dummies - Educational Guide</h2>
+        <p style="color: #475569;">Review this comprehensive guide before starting the game.</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Read and display the HTML file
+    try:
+        with open('ai-coding-dummies-presentation.html', 'r', encoding='utf-8') as f:
+            html_content = f.read()
+        st.components.v1.html(html_content, height=800, scrolling=True)
+    except FileNotFoundError:
+        st.error("Learning module file not found. Please ensure 'ai-coding-dummies-presentation.html' is in the game directory.")
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("⬅️ Back to Welcome", use_container_width=True):
+            st.session_state.view_mode = 'welcome'
+            st.rerun()
+    with col2:
+        if st.button("🚀 Start the Game!", type="primary", use_container_width=True):
+            st.session_state.game_started = True
+            st.session_state.view_mode = 'game'
+            st.rerun()
+
+def show_learning_module_programming():
+    """Display the Programming Languages module"""
+    st.markdown("""
+    <div style="background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <h2 style="color: #1e3a8a;">💻 Programming Languages - Beginner's Guide</h2>
+        <p style="color: #475569;">Learn about different programming languages before starting the game.</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Read and display the HTML file
+    try:
+        with open('programming-languages.html', 'r', encoding='utf-8') as f:
+            html_content = f.read()
+        st.components.v1.html(html_content, height=800, scrolling=True)
+    except FileNotFoundError:
+        st.error("Learning module file not found. Please ensure 'programming-languages.html' is in the game directory.")
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("⬅️ Back to Welcome", use_container_width=True):
+            st.session_state.view_mode = 'welcome'
+            st.rerun()
+    with col2:
+        if st.button("🚀 Start the Game!", type="primary", use_container_width=True):
+            st.session_state.game_started = True
+            st.session_state.view_mode = 'game'
+            st.rerun()
 
 def main():
     load_css()
@@ -790,8 +847,12 @@ def main():
             st.progress(progress)
             st.markdown(f"Progress: {int(progress*100)}%")
     
-    # Main game area
-    if not st.session_state.game_started:
+    # Main game area - handle different view modes
+    if st.session_state.view_mode == 'learning_ai':
+        show_learning_module_ai()
+    elif st.session_state.view_mode == 'learning_prog':
+        show_learning_module_programming()
+    elif not st.session_state.game_started:
         show_welcome_screen()
     else:
         show_game_interface()
@@ -815,12 +876,30 @@ def show_welcome_screen():
         - 💡 Hints available for each question
         - 🏆 Score points for correct answers
         - 📈 Learn from mistakes with detailed explanations
-        
-        ### Ready to become an AI & Coding expert?
         """)
         
-        if st.button("🚀 Start Learning!", type="primary", use_container_width=True):
+        st.markdown("---")
+        st.markdown("### 📚 Learning Modules")
+        st.markdown("Review these educational materials before starting the game:")
+        
+        col_a, col_b = st.columns(2)
+        
+        with col_a:
+            if st.button("📖 AI & Coding Guide", use_container_width=True):
+                st.session_state.view_mode = 'learning_ai'
+                st.rerun()
+        
+        with col_b:
+            if st.button("💻 Programming Languages", use_container_width=True):
+                st.session_state.view_mode = 'learning_prog'
+                st.rerun()
+        
+        st.markdown("---")
+        st.markdown("### Ready to become an AI & Coding expert?")
+        
+        if st.button("🚀 Start the Game!", type="primary", use_container_width=True):
             st.session_state.game_started = True
+            st.session_state.view_mode = 'game'
             st.rerun()
 
 def show_game_interface():

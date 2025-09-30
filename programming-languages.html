@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Languages - Beginner's Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            padding: 30px 0;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .intro {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .language-card {
+            background: white;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .language-header {
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        
+        .language-content {
+            padding: 20px;
+        }
+        
+        .simple-example {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #007bff;
+            font-family: monospace;
+        }
+        
+        .explanation {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        
+        .flowchart {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: monospace;
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .before, .after {
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .before {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .after {
+            background: #d1edff;
+            border-left: 4px solid #0dcaf0;
+        }
+        
+        .plain-english {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #198754;
+        }
+        
+        .interactive-demo {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 2px solid #6f42c1;
+        }
+        
+        .calculator {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .demo-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        .demo-button:hover {
+            background: #0056b3;
+        }
+        
+        .uses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .use-item {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #28a745;
+        }
+        
+        /* Language colors */
+        .javascript { background: #f7df1e; color: #333; }
+        .python { background: #3776ab; }
+        .java { background: #ed8b00; }
+        .csharp { background: #239120; }
+        .php { background: #777bb4; }
+        .cpp { background: #00599c; }
+        .ruby { background: #cc342d; }
+        .go { background: #00add8; }
+        .swift { background: #fa7343; }
+        .sql { background: #336791; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚀 Programming Languages for Beginners</h1>
+        <p>A Simple Guide with Real Examples</p>
+    </div>
+    
+    <div class="intro">
+        <h2>What is Programming?</h2>
+        <p><strong>Programming is like writing recipes for computers!</strong> Just like you follow a recipe to bake a cake, computers follow code to perform tasks.</p>
+        <p><strong>Example:</strong> To make a sandwich, you'd write: "1. Get bread, 2. Add peanut butter, 3. Add jelly, 4. Close sandwich." Programming is similar but for computers!</p>
+    </div>
+
+    <!-- JavaScript -->
+    <div class="language-card">
+        <div class="language-header javascript">
+            <h2>1. JavaScript - Web Magic ✨</h2>
+        </div>
+        <div class="language-content">
+            <p><strong>What it does:</strong> Makes websites interactive - buttons, animations, forms that respond when you click them.</p>
+            
+            <h3>1️⃣ Code Flow Diagram:</h3>
+            <div class="flowchart">
+🟢 START
+  ↓
+📝 User visits webpage
+  ↓
+🔍 JavaScript code runs
+  ↓
+🎯 User clicks button
+  ↓
+⚡ JavaScript detects click
+  ↓
+🔄 Change text/color/animation
+  ↓
+👀 User sees the change
+  ↓
+🔚 END (waiting for next click)
+            </div>
+            
+            <h3>2️⃣ Before & After Example:</h3>
+            <div class="before-after">
+                <div class="before">
+                    <h4>🔸 BEFORE JavaScript:</h4>
+                    <p>• Button just sits there</p>
+                    <p>• No response to clicks</p>
+                    <p>• Page looks static</p>
+                </div>
+                <div class="after">
+                    <h4>🔹 AFTER JavaScript:</h4>
+                    <p>• Button changes color on hover</p>
+                    <p>• Shows "Thank you!" when clicked</p>
+                    <p>• Page feels alive and responsive</p>
+                    <p>• User stays engaged</p>
+                </div>
+            </div>
+            
+            <h3>3️⃣ Code Example:</h3>
+            <div class="simple-example">
+// Show a welcome message
+alert("Welcome to our website!");
+
+// Change text when button is clicked
+function changeName() {
+    document.getElementById("mytext").innerHTML = "Hello there!";
+}
+            </div>
+            
+            <div class="plain-english">
+                <h4>🗣️ Plain English Translation:</h4>
+                <p><strong>Line 1:</strong> "Hey computer, show the user a popup window that says 'Welcome to our website!'"</p>
+                <p><strong>Line 3-5:</strong> "Create a recipe called 'changeName'. When someone uses this recipe, find the part of the webpage labeled 'mytext' and change whatever it says to 'Hello there!'"</p>
+                <p><strong>In everyday terms:</strong> It's like programming a doorbell that not only rings but also changes the welcome sign when someone presses it!</p>
+            </div>
+            
+            <h3>4️⃣ Try It Yourself! Interactive Demo:</h3>
+            <div class="interactive-demo">
+                <p id="demo-text">This text will change when you click the button!</p>
+                <button class="demo-button" onclick="changeText()">Click Me!</button>
+                <button class="demo-button" onclick="changeColor()">Change Color!</button>
+                <button class="demo-button" onclick="resetDemo()">Reset</button>
+            </div>
+            
+            <h3>🤖 Vibe Coding with AI for JavaScript:</h3>
+            <div class="interactive-demo">
+                <h4>📋 Copy This Prompt to Copilot:</h4>
+                <div class="simple-example" style="cursor: pointer;" onclick="copyToClipboard('js-prompt')" id="js-prompt">
+"I'm a complete beginner learning JavaScript. I want to create an interactive photo gallery with:
+1. 5 images that users can click through
+2. 'Next' and 'Previous' buttons
+3. Image counter showing '1 of 5'
+4. Smooth transitions between images
+5. Please include HTML, CSS, and explain each JavaScript function step-by-step."
+                </div>
+                <p><em>💡 Click the prompt above to copy it!</em></p>
+                
+                <div class="plain-english">
+                    <h4>✨ What AI Will Create for You:</h4>
+                    <p>• Complete HTML page with image gallery</p>
+                    <p>• CSS styling for smooth animations</p>
+                    <p>• JavaScript with detailed comments explaining DOM manipulation, arrays, and event listeners</p>
+                    <p>• Step-by-step explanation of how web interactivity works</p>
+                </div>
+                
+                <div class="before-after">
+                    <div class="before">
+                        <h4>🆚 Instead of Struggling to Learn:</h4>
+                        <p>• Spending weeks on syntax</p>
+                        <p>• Reading confusing tutorials</p>
+                        <p>• Getting stuck on errors</p>
+                    </div>
+                    <div class="after">
+                        <h4>🎯 With Vibe Coding You Get:</h4>
+                        <p>• Working code in minutes</p>
+                        <p>• Personal tutor explanations</p>
+                        <p>• Learn by doing real projects</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Common Uses:</h3>
+            <div class="uses">
+                <div class="use-item">Website buttons and menus</div>
+                <div class="use-item">Online games (like Wordle)</div>
+                <div class="use-item">Shopping cart updates</div>
+                <div class="use-item">Form validation</div>
+                <div class="use-item">Mobile apps (Instagram uses it!)</div>
+            </div>
+            
+            <p><strong>File extension:</strong> .js</p>
+        </div>
+    </div>
+
+    <!-- Python -->
+    <div class="language-card">
+        <div class="language-header python">
+            <h2>2. Python - Simple and Powerful 🐍</h2>
+        </div>
+        <div class="language-content">
+            <p><strong>What it does:</strong> Great for beginners! Used for websites, data analysis, AI, and automation.</p>
+            
+            <h3>Simple Example:</h3>
+            <div class="simple-example">
+# Ask user their name and greet them
+name = input("What's your name? ")
+print("Hello, " + name + "! Nice to meet you!")
+
+# Simple calculator
+result = 5 + 3
+print("5 + 3 equals:", result)
+            </div>
+            
+            <div class="explanation">
+                <strong>What this does:</strong> Asks for your name, greets you, then calculates 5+3 and shows the answer (8).
+            </div>
+            
+            <h3>🤖 Vibe Coding with AI for Python:</h3>
+            <div class="interactive-demo">
+                <h4>📋 Perfect Python Prompt:</h4>
+                <div class="simple-example" style="cursor: pointer;" onclick="copyToClipboard('python-prompt')" id="python-prompt">
+"I want to automate my daily file organization using Python. Create a script that:
+1. Scans my desktop folder for files
+2. Organizes them into folders by type (documents, images, videos)
+3. Creates folders if they don't exist
+4. Shows a summary of files moved
+5. Include error handling and explain each step in beginner terms."
+                </div>
+                <p><em>💡 Click to copy this prompt!</em></p>
+                
+                <div class="flowchart">
+<strong>🎯 What You'll Get from AI:</strong>
+🐍 Complete Python script with file operations
+↓
+📁 Automatic folder creation logic
+↓
+⚠️ Error handling for permissions/missing files
+↓
+📊 Summary report of organized files
+↓
+📝 Step-by-step explanations of Python concepts
+                </div>
+                
+                <div class="plain-english">
+                    <h4>🎯 Pro Tip for Python Vibe Coding:</h4>
+                    <p><strong>Always mention:</strong> "I'm a beginner" + "Include error handling" + "Explain each library used"</p>
+                    <p><strong>Python AI specializes in:</strong> Data analysis, automation scripts, web scraping, and AI/ML projects</p>
+                </div>
+            </div>
+            
+            <h3>Common Uses:</h3>
+            <div class="uses">
+                <div class="use-item">Netflix recommendations</div>
+                <div class="use-item">Instagram photo filters</div>
+                <div class="use-item">Data analysis (like Excel but more powerful)</div>
+                <div class="use-item">Automating boring tasks</div>
+                <div class="use-item">AI and machine learning</div>
+            </div>
+            
+            <p><strong>File extension:</strong> .py</p>
+        </div>
+    </div>
+
+    <!-- Java -->
+    <div class="language-card">
+        <div class="language-header java">
+            <h2>3. Java - Enterprise Champion ☕</h2>
+        </div>
+        <div class="language-content">
+            <p><strong>What it does:</strong> Powers big business applications and Android apps. Very reliable and secure.</p>
+            
+            <h3>Simple Example:</h3>
+            <div class="simple-example">
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        
+        int age = 25;
+        System.out.println("I am " + age + " years old");
+    }
+}
+            </div>
+            
+            <div class="explanation">
+                <strong>What this does:</strong> This prints "Hello, World!" to the screen, then creates a variable called "age" with value 25 and displays "I am 25 years old".
+            </div>
+            
+            <h3>Common Uses:</h3>
+            <div class="uses">
+                <div class="use-item">Android mobile apps</div>
+                <div class="use-item">Banking systems</div>
+                <div class="use-item">Large company software</div>
+                <div class="use-item">Web applications</div>
+                <div class="use-item">Minecraft game engine</div>
+            </div>
+            
+            <p><strong>File extension:</strong> .java</p>
+        </div>
+    </div>
+
+    <!-- C# -->
+    <div class="language-card">
+        <div class="language-header csharp">
+            <h2>4. C# - Microsoft's Favorite 🎯</h2>
+        </div>
+        <div class="language-content">
+            <p><strong>What it does:</strong> Creates Windows programs, games, and web applications. Very popular for business software.</p>
+            
+            <h3>Simple Example:</h3>
+            <div class="simple-example">
+using System;
+
+class Program {
+    static void Main() {
+        Console.WriteLine("Welcome to my program!");
+        
+        string favoriteColor = "blue";
+        Console.WriteLine("My favorite color is " + favoriteColor);
+    }
+}
+            </div>
+            
+            <div class="explanation">
+                <strong>What this does:</strong> Shows "Welcome to my program!" then creates a text variable called "favoriteColor" with "blue" and displays "My favorite color is blue".
+            </div>
+            
+            <h3>Common Uses:</h3>
+            <div class="uses">
+                <div class="use-item">Windows desktop programs</div>
+                <div class="use-item">Unity game development</div>
+                <div class="use-item">Business applications</div>
+                <div class="use-item">Web services</div>
+                <div class="use-item">Mobile apps (Xamarin)</div>
+            </div>
+            
+            <p><strong>File extension:</strong> .cs</p>
+        </div>
+    </div>
+
+    <!-- PHP -->
+    <div class="language-card">
+        <div class="language-header php">
+            <h2>5. PHP - Web Builder 🌐</h2>
+        </div>
+        <div class="language-content">
+            <p><strong>What it does:</strong> Powers most websites on the internet, including Facebook and WordPress.</p>
+            
+            <h3>Simple Example:</h3>
+            <div class="simple-example">
+&lt;?php
+echo "Today is a great day!";
+
+$visitor_count = 100;
+echo "You are visitor number: " . $visitor_count;
+?&gt;
+            </div>
+            
+            <div class="explanation">
+                <strong>What this does:</strong> Displays "Today is a great day!" on a webpage, then creates a number variable for visitor count and shows "You are visitor number: 100".
+            </div>
+            
+            <h3>Common Uses:</h3>
+            <div class="uses">
+                <div class="use-item">WordPress websites</div>
+                <div class="use-item">Facebook backend</div>
+                <div class="use-item">Online stores</div>
+                <div class="use-item">Blog platforms</div>
+                <div class="use-item">User login systems</div>
+            </div>
+            
+            <p><strong>File extension:</strong> .php</p>
+        </div>
+    </div>
+
+    <!-- SQL -->
+    <div class="language-card">
+        <div class="language-header sql">
+            <h2>6. SQL - Data Detective 🔍</h2>
+        </div>
+        <div class="language-content">
+            <p><strong>What it does:</strong> Talks to databases to find, store, and organize information. Like a super-powered Excel.</p>
+            
+            <h3>Simple Example:</h3>
+            <div class="simple-example">
+-- Find all customers from New York
+SELECT name, email FROM customers 
+WHERE city = 'New York';
+
+-- Count how many products we have
+SELECT COUNT(*) FROM products;
+            </div>
+            
+            <div class="explanation">
+                <strong>What this does:</strong> First command finds all customer names and emails who live in New York. Second command counts how many products are in the database.
+            </div>
+            
+            <h3>Common Uses:</h3>
+            <div class="uses">
+                <div class="use-item">Bank account management</div>
+                <div class="use-item">Online shopping databases</div>
+                <div class="use-item">Social media user data</div>
+                <div class="use-item">Hospital patient records</div>
+                <div class="use-item">Business analytics</div>
+            </div>
+            
+            <p><strong>File extension:</strong> .sql</p>
+        </div>
+    </div>
+
+    <!-- Swift -->
+    <div class="language-card">
+        <div class="language-header swift">
+            <h2>7. Swift - Apple's Language 🍎</h2>
+        </div>
+        <div class="language-content">
+            <p><strong>What it does:</strong> Creates iPhone, iPad, Mac, and Apple Watch apps. Apple's modern programming language.</p>
+            
+            <h3>Simple Example:</h3>
+            <div class="simple-example">
+// Simple greeting
+print("Hello from iPhone!")
+
+// Create a variable and use it
+var temperature = 75
+print("The temperature is \(temperature) degrees")
+            </div>
+            
+            <div class="explanation">
+                <strong>What this does:</strong> Prints "Hello from iPhone!" then creates a temperature variable and displays "The temperature is 75 degrees".
+            </div>
+            
+            <h3>Common Uses:</h3>
+            <div class="uses">
+                <div class="use-item">iPhone apps</div>
+                <div class="use-item">iPad apps</div>
+                <div class="use-item">Mac desktop programs</div>
+                <div class="use-item">Apple Watch apps</div>
+                <div class="use-item">Apple TV apps</div>
+            </div>
+            
+            <p><strong>File extension:</strong> .swift</p>
+        </div>
+    </div>
+
+    <!-- Go -->
+    <div class="language-card">
+        <div class="language-header go">
+            <h2>8. Go - Google's Speed Demon 🚀</h2>
+        </div>
+        <div class="language-content">
+            <p><strong>What it does:</strong> Fast and simple language for building web services and cloud applications.</p>
+            
+            <h3>Simple Example:</h3>
+            <div class="simple-example">
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Go is fast!")
+    
+    speed := "lightning fast"
+    fmt.Printf("Go runs %s\n", speed)
+}
+            </div>
+            
+            <div class="explanation">
+                <strong>What this does:</strong> Prints "Go is fast!" then creates a text variable called "speed" and displays "Go runs lightning fast".
+            </div>
+            
+            <h3>Common Uses:</h3>
+            <div class="uses">
+                <div class="use-item">Google services</div>
+                <div class="use-item">Docker containers</div>
+                <div class="use-item">Cloud applications</div>
+                <div class="use-item">Web servers</div>
+                <div class="use-item">Network tools</div>
+            </div>
+            
+            <p><strong>File extension:</strong> .go</p>
+        </div>
+    </div>
+
+    <!-- Ruby -->
+    <div class="language-card">
+        <div class="language-header ruby">
+            <h2>9. Ruby - Developer Joy 💎</h2>
+        </div>
+        <div class="language-content">
+            <p><strong>What it does:</strong> Focuses on making programming enjoyable and productive. Popular for web development.</p>
+            
+            <h3>Simple Example:</h3>
+            <div class="simple-example">
+# Simple greeting
+puts "Ruby makes me happy!"
+
+# Working with numbers
+my_age = 30
+puts "I am #{my_age} years old"
+            </div>
+            
+            <div class="explanation">
+                <strong>What this does:</strong> Shows "Ruby makes me happy!" then creates an age variable and displays "I am 30 years old".
+            </div>
+            
+            <h3>Common Uses:</h3>
+            <div class="uses">
+                <div class="use-item">GitHub platform</div>
+                <div class="use-item">Shopify online stores</div>
+                <div class="use-item">Web applications</div>
+                <div class="use-item">Automation scripts</div>
+                <div class="use-item">Startup websites</div>
+            </div>
+            
+            <p><strong>File extension:</strong> .rb</p>
+        </div>
+    </div>
+
+    <!-- C++ -->
+    <div class="language-card">
+        <div class="language-header cpp">
+            <h2>10. C++ - Performance King ⚡</h2>
+        </div>
+        <div class="language-content">
+            <p><strong>What it does:</strong> Very fast and powerful. Used for games, operating systems, and high-performance applications.</p>
+            
+            <h3>Simple Example:</h3>
+            <div class="simple-example">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "C++ is powerful!" &lt;&lt; endl;
+    
+    int score = 100;
+    cout &lt;&lt; "Your score is: " &lt;&lt; score &lt;&lt; endl;
+    
+    return 0;
+}
+            </div>
+            
+            <div class="explanation">
+                <strong>What this does:</strong> Displays "C++ is powerful!" then creates a score variable and shows "Your score is: 100".
+            </div>
+            
+            <h3>Common Uses:</h3>
+            <div class="uses">
+                <div class="use-item">Video games (Call of Duty, FIFA)</div>
+                <div class="use-item">Windows/Mac operating systems</div>
+                <div class="use-item">Web browsers (Chrome, Firefox)</div>
+                <div class="use-item">Adobe Photoshop</div>
+                <div class="use-item">Database systems</div>
+            </div>
+            
+            <p><strong>File extension:</strong> .cpp</p>
+        </div>
+    </div>
+
+    <!-- AI Prompt Engineering Guide -->
+    <div class="calculator">
+        <h2>🤖 AI Copilot Prompt Engineering Guide</h2>
+        <p>Learn "Vibe Coding" - How to ask AI to write code for you!</p>
+        
+        <h3>🎯 How to Write Perfect Prompts for Copilot</h3>
+        
+        <div class="interactive-demo">
+            <h4>✅ GOOD Prompt Structure:</h4>
+            <div class="plain-english">
+                <strong>1. Context:</strong> "I'm a beginner learning [language]"<br>
+                <strong>2. Goal:</strong> "I want to create [specific thing]"<br>
+                <strong>3. Details:</strong> "It should [specific requirements]"<br>
+                <strong>4. Format:</strong> "Please explain each line of code"
+            </div>
+            
+            <h4>🚀 JavaScript Prompt Examples:</h4>
+            <div class="before-after">
+                <div class="before">
+                    <h4>❌ BAD Prompt:</h4>
+                    <p>"Make a button"</p>
+                    <p><em>Result: Basic, unclear code</em></p>
+                </div>
+                <div class="after">
+                    <h4>✅ GOOD Prompt:</h4>
+                    <p>"I'm learning JavaScript. Create a button that changes the background color of a webpage when clicked. The button should say 'Change Color' and cycle through 5 different colors. Please explain what each line does."</p>
+                    <p><em>Result: Complete, documented code</em></p>
+                </div>
+            </div>
+            
+            <div class="simple-example">
+<strong>Copy This Prompt:</strong>
+"I'm a complete beginner learning JavaScript. I want to create an interactive webpage with:
+1. A button that says 'Click Me!'
+2. When clicked, it should show a random compliment from a list
+3. The text should appear below the button
+4. Please add comments explaining what each line does
+5. Make it beginner-friendly with HTML included"
+            </div>
+        </div>
+        
+        <h3>🐍 Python Prompt Templates:</h3>
+        <div class="uses">
+            <div class="use-item">
+                <strong>Data Analysis:</strong><br>
+                "I'm learning Python for data analysis. Create a script that reads a CSV file with sales data and creates a simple bar chart. Include sample data and explain each step."
+            </div>
+            <div class="use-item">
+                <strong>Automation:</strong><br>
+                "I want to automate sending birthday emails. Write Python code that reads birthdays from a text file and sends personalized emails. Make it beginner-friendly with comments."
+            </div>
+            <div class="use-item">
+                <strong>Web Scraping:</strong><br>
+                "Create a Python script that gets the current weather from a website and saves it to a file. Include error handling and explain how web scraping works."
+            </div>
+        </div>
+        
+        <h3>☕ Java Prompt Examples:</h3>
+        <div class="simple-example">
+<strong>Perfect Java Prompt:</strong>
+"I'm new to Java programming. I need to create a simple banking application with:
+- A BankAccount class with deposit, withdraw, and balance methods
+- Input validation (no negative amounts)
+- A main method to test the functionality
+- Clear comments explaining object-oriented concepts
+- Show me how to handle errors properly"
+        </div>
+        
+        <h3>🎯 C# Game Development Prompt:</h3>
+        <div class="plain-english">
+            <strong>Unity Game Prompt:</strong><br>
+            "I want to learn C# for Unity game development. Create a simple 2D player controller script that:
+            1. Moves a character left/right with arrow keys
+            2. Makes the character jump with spacebar
+            3. Includes collision detection with ground
+            4. Add comments explaining Unity-specific methods
+            5. Include beginner tips for game development"
+        </div>
+        
+        <h3>🌐 PHP Web Development Prompts:</h3>
+        <div class="before-after">
+            <div class="before">
+                <h4>🐛 Common PHP Mistakes in Prompts:</h4>
+                <p>"Make a login system" - Too vague</p>
+                <p>"PHP code for database" - No specifics</p>
+                <p>"Create a website" - Too broad</p>
+            </div>
+            <div class="after">
+                <h4>✨ Better PHP Prompts:</h4>
+                <p>"Create a secure PHP login system with password hashing, session management, and SQL injection protection. Include HTML form and explain security concepts."</p>
+                <p>"Build a PHP contact form that validates email, sanitizes input, sends email, and stores in MySQL database. Include error handling."</p>
+            </div>
+        </div>
+        
+        <h3>📊 SQL Query Prompt Templates:</h3>
+        <div class="uses">
+            <div class="use-item">
+                <strong>Beginner SQL:</strong><br>
+                "I'm new to databases. Help me write SQL queries for a bookstore database with tables: books, authors, customers, orders. Show me how to find all books by a specific author and explain joins."
+            </div>
+            <div class="use-item">
+                <strong>Advanced SQL:</strong><br>
+                "Create SQL queries for sales analytics: monthly revenue, top-selling products, customer lifetime value. Include window functions and explain complex concepts simply."
+            </div>
+        </div>
+        
+        <h3>🍎 Swift iOS App Prompts:</h3>
+        <div class="flowchart">
+<strong>iOS Calculator App Prompt:</strong>
+"I want to build my first iOS app in Swift - a simple calculator.
+Features needed:
+✓ Basic math operations (+, -, *, /)
+✓ Clear button and decimal support
+✓ Modern iOS design with Auto Layout
+✓ Handle division by zero errors
+✓ Explain iOS development concepts for beginners
+✓ Include storyboard setup instructions"
+        </div>
+    </div>
+
+    <!-- Salary Calculator -->
+    <div class="calculator">
+        <h2>💰 Programming Salary Calculator</h2>
+        <p>Calculate your potential salary based on language choice and experience!</p>
+        
+        <label for="language-select">Choose a programming language:</label>
+        <select id="language-select" style="margin: 10px; padding: 5px;">
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="csharp">C#</option>
+            <option value="php">PHP</option>
+            <option value="swift">Swift</option>
+        </select>
+        
+        <label for="experience-select">Your experience level:</label>
+        <select id="experience-select" style="margin: 10px; padding: 5px;">
+            <option value="entry">Entry Level (0-2 years)</option>
+            <option value="mid">Mid Level (3-5 years)</option>
+            <option value="senior">Senior Level (5+ years)</option>
+        </select>
+        
+        <button class="demo-button" onclick="calculateSalary()">Calculate My Potential Salary!</button>
+        
+        <div id="salary-result" style="margin-top: 15px; padding: 15px; background: #e7f3ff; border-radius: 5px; display: none;">
+            <h3>Your Estimated Salary Range:</h3>
+            <p id="salary-amount"></p>
+            <p id="salary-details"></p>
+        </div>
+    </div>
+
+    <!-- Advanced Prompt Engineering Tips -->
+    <div class="calculator">
+        <h2>🎨 Advanced "Vibe Coding" Techniques</h2>
+        
+        <h3>🚀 Pro Tips for Better AI Collaboration:</h3>
+        <div class="interactive-demo">
+            <h4>1️⃣ The "Explain Like I'm 5" Method:</h4>
+            <div class="plain-english">
+                Add to any prompt: <strong>"Explain this like I'm 5 years old, then show the code, then explain it again with technical terms."</strong>
+            </div>
+            
+            <h4>2️⃣ The "Step-by-Step" Approach:</h4>
+            <div class="simple-example">
+"Break this into steps:
+1. First, show me the basic structure
+2. Then, add the main functionality 
+3. Finally, add error handling and polish
+4. Explain what each step accomplishes"
+            </div>
+            
+            <h4>3️⃣ The "Fix My Code" Prompt:</h4>
+            <div class="before-after">
+                <div class="before">
+                    <h4>❌ Weak Fix Request:</h4>
+                    <p>"This doesn't work, help me"</p>
+                </div>
+                <div class="after">
+                    <h4>✅ Strong Fix Request:</h4>
+                    <p>"I'm trying to [specific goal]. My code does [current behavior] but I want it to [desired behavior]. Here's my code: [paste code]. What's wrong and how do I fix it?"</p>
+                </div>
+            </div>
+        </div>
+        
+        <h3>🎯 Magic Prompt Phrases That Work:</h3>
+        <div class="uses">
+            <div class="use-item">
+                <strong>"Include comments explaining..."</strong><br>
+                Gets well-documented code that teaches you
+            </div>
+            <div class="use-item">
+                <strong>"Make it beginner-friendly..."</strong><br>
+                Ensures simple, understandable solutions
+            </div>
+            <div class="use-item">
+                <strong>"Show me three different ways..."</strong><br>
+                Learn multiple approaches to same problem
+            </div>
+            <div class="use-item">
+                <strong>"What could go wrong with this code..."</strong><br>
+                Learn about potential bugs and edge cases
+            </div>
+            <div class="use-item">
+                <strong>"Convert this into production-ready..."</strong><br>
+                Upgrade your code with best practices
+            </div>
+        </div>
+        
+        <h3>🛠️ Debugging Prompts:</h3>
+        <div class="flowchart">
+<strong>When Your Code Breaks:</strong>
+"My [language] code is giving me this error: [exact error message]
+
+Here's what I'm trying to do: [explain goal]
+Here's my code: [paste code]
+I expected: [what should happen]
+But instead: [what actually happens]
+
+Please:
+1. Explain what the error means in simple terms
+2. Show me exactly how to fix it
+3. Explain why this error happened
+4. Give me tips to avoid it in the future"
+        </div>
+    </div>
+
+    <div class="intro" style="margin-top: 30px;">
+        <h2>🎉 Summary</h2>
+        <p><strong>Choose your language based on what you want to build:</strong></p>
+        <ul>
+            <li><strong>Websites:</strong> JavaScript, PHP, Python</li>
+            <li><strong>Mobile Apps:</strong> Swift (iPhone), Java (Android)</li>
+            <li><strong>Games:</strong> C++, C#</li>
+            <li><strong>Business Software:</strong> Java, C#</li>
+            <li><strong>Data Analysis:</strong> Python, SQL</li>
+        </ul>
+        <p><strong>🤖 Remember:</strong> AI is your coding partner! The better you ask, the better it helps. Practice writing clear prompts and you'll become a "vibe coding" expert!</p>
+    </div>
+</body>
+</html>
